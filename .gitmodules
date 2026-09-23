@@ -1,0 +1,12 @@
+[submodule "third_party/rtl/pulp_apb"]
+	path = third_party/rtl/pulp_apb
+	url = https://github.com/pulp-platform/apb.git
+[submodule "third_party/rtl/verilog_axi"]
+	path = third_party/rtl/verilog_axi
+	url = https://github.com/alexforencich/verilog-axi.git
+[submodule "third_party/dv_vip/apb_vip"]
+	path = third_party/dv_vip/apb_vip
+	url = https://github.com/muneebullashariff/apb_vip.git
+[submodule "third_party/dv_vip/tvip-axi"]
+	path = third_party/dv_vip/tvip-axi
+	url = https://github.com/taichi-ishitani/tvip-axi.git
