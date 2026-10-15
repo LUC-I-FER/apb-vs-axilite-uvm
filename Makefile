@@ -4,15 +4,16 @@ SNAPSHOT   = tb_top_sim
 VCD_FILE   = dump.vcd
 
 # Include directories
-INC_DIRS   = -i dv/tb_top -i dv/uvm_env -i rtl/memory -i rtl/bus
+INC_DIRS   = -i dv/tb_top -i dv/uvm_env -i rtl/memory -i rtl/bus \
+             -i third_party/rtl/pulp_apb/src -i third_party/rtl/pulp_apb/include
 
-# Source files
-RTL_SRCS   = rtl/memory/apb_sram.sv \
-             rtl/memory/axi_lite_sram.sv
+# Source files: dynamically find all .v and .sv files in rtl/
+RTL_SRCS   = $(shell find rtl -type f \( -name "*.sv" -o -name "*.v" \))
 
-TB_SRCS    = dv/tb_top/apb_if.sv \
-             dv/tb_top/axi_lite_if.sv \
-             dv/tb_top/tb_top.sv
+TB_SRCS    = dv/tb_top/tb_top.sv
+
+RTL_SRCS  += third_party/rtl/pulp_apb/src/apb_intf.sv \
+             third_party/rtl/verilog_axi/rtl/axi_ram.v
 
 .PHONY: all compile elaborate run wave clean
 

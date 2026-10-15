@@ -1,0 +1,213 @@
+[2026-10-14 20:40:40 UTC] xrun -Q -unbuffered '-timescale' '1ns/1ns' '-sysv' '-access' '+rw' design.sv testbench.sv  
+TOOL:	xrun	25.03-s001: Started on Oct 14, 2026 at 16:40:40 EDT
+xrun: 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+	Top level design units:
+		perf_pkg
+		perf_tb
+Loading snapshot worklib.perf_tb:sv .................... Done
+xcelium> source /xcelium25.03/tools/xcelium/files/xmsimrc
+xcelium> run
+
+APB vs AXI4-Lite performance analysis: 7 scenarios, 1000 txns each
+
+============================================================================
+ Scenario 0 : idle gap = 0 cycle(s), 1000 write transactions x 4 bytes
+============================================================================
+  Metric                             |          APB |    AXI4-Lite
+  -----------------------------------+--------------+-------------
+  Transactions completed             |         1000 |         1000
+  Elapsed time (cycles)              |         3000 |         4000
+  Transaction latency - min (cycles) |            2 |            3
+  Average latency (cycles)           |         2.00 |         3.00
+  Average latency (ns)               |        20.00 |        30.00
+  Transaction latency - max (cycles) |            2 |            3
+  Throughput (MB/s)                  |       133.33 |       100.00
+  Transaction rate (Mtxn/s)          |        33.33 |        25.00
+  Bus utilisation (%)                |        66.67 |        75.00
+  Data-phase efficiency (%)          |        33.33 |        25.00
+  Master stall cycles (total)        |            0 |         2000
+  Master stall cycles per txn        |         0.00 |         2.00
+  Inter-txn gap - min (cycles)       |            0 |            0
+  Inter-txn gap - avg (cycles)       |         0.00 |         0.00
+  Inter-txn gap - max (cycles)       |            0 |            0
+
+  Per-transaction latency, first 8 transactions of scenario 0
+  (request accepted -> transfer complete)
+  Txn# |  APB (cycles / ns)  |  AXI4-Lite (cycles / ns)
+  -----+---------------------+-------------------------
+     0 |     2 /    20.0 ns   |     3 /    30.0 ns
+     1 |     2 /    20.0 ns   |     3 /    30.0 ns
+     2 |     2 /    20.0 ns   |     3 /    30.0 ns
+     3 |     2 /    20.0 ns   |     3 /    30.0 ns
+     4 |     2 /    20.0 ns   |     3 /    30.0 ns
+     5 |     2 /    20.0 ns   |     3 /    30.0 ns
+     6 |     2 /    20.0 ns   |     3 /    30.0 ns
+     7 |     2 /    20.0 ns   |     3 /    30.0 ns
+
+============================================================================
+ Scenario 1 : idle gap = 1 cycle(s), 1000 write transactions x 4 bytes
+============================================================================
+  Metric                             |          APB |    AXI4-Lite
+  -----------------------------------+--------------+-------------
+  Transactions completed             |         1000 |         1000
+  Elapsed time (cycles)              |         3999 |         4999
+  Transaction latency - min (cycles) |            2 |            3
+  Average latency (cycles)           |         2.00 |         3.00
+  Average latency (ns)               |        20.00 |        30.00
+  Transaction latency - max (cycles) |            2 |            3
+  Throughput (MB/s)                  |       100.03 |        80.02
+  Transaction rate (Mtxn/s)          |        25.01 |        20.00
+  Bus utilisation (%)                |        50.01 |        60.01
+  Data-phase efficiency (%)          |        25.01 |        20.00
+  Master stall cycles (total)        |            0 |         2000
+  Master stall cycles per txn        |         0.00 |         2.00
+  Inter-txn gap - min (cycles)       |            1 |            1
+  Inter-txn gap - avg (cycles)       |         1.00 |         1.00
+  Inter-txn gap - max (cycles)       |            1 |            1
+
+============================================================================
+ Scenario 2 : idle gap = 2 cycle(s), 1000 write transactions x 4 bytes
+============================================================================
+  Metric                             |          APB |    AXI4-Lite
+  -----------------------------------+--------------+-------------
+  Transactions completed             |         1000 |         1000
+  Elapsed time (cycles)              |         4998 |         5998
+  Transaction latency - min (cycles) |            2 |            3
+  Average latency (cycles)           |         2.00 |         3.00
+  Average latency (ns)               |        20.00 |        30.00
+  Transaction latency - max (cycles) |            2 |            3
+  Throughput (MB/s)                  |        80.03 |        66.69
+  Transaction rate (Mtxn/s)          |        20.01 |        16.67
+  Bus utilisation (%)                |        40.02 |        50.02
+  Data-phase efficiency (%)          |        20.01 |        16.67
+  Master stall cycles (total)        |            0 |         2000
+  Master stall cycles per txn        |         0.00 |         2.00
+  Inter-txn gap - min (cycles)       |            2 |            2
+  Inter-txn gap - avg (cycles)       |         2.00 |         2.00
+  Inter-txn gap - max (cycles)       |            2 |            2
+
+============================================================================
+ Scenario 3 : idle gap = 4 cycle(s), 1000 write transactions x 4 bytes
+============================================================================
+  Metric                             |          APB |    AXI4-Lite
+  -----------------------------------+--------------+-------------
+  Transactions completed             |         1000 |         1000
+  Elapsed time (cycles)              |         6996 |         7996
+  Transaction latency - min (cycles) |            2 |            3
+  Average latency (cycles)           |         2.00 |         3.00
+  Average latency (ns)               |        20.00 |        30.00
+  Transaction latency - max (cycles) |            2 |            3
+  Throughput (MB/s)                  |        57.18 |        50.03
+  Transaction rate (Mtxn/s)          |        14.29 |        12.51
+  Bus utilisation (%)                |        28.59 |        37.52
+  Data-phase efficiency (%)          |        14.29 |        12.51
+  Master stall cycles (total)        |            0 |         2000
+  Master stall cycles per txn        |         0.00 |         2.00
+  Inter-txn gap - min (cycles)       |            4 |            4
+  Inter-txn gap - avg (cycles)       |         4.00 |         4.00
+  Inter-txn gap - max (cycles)       |            4 |            4
+
+============================================================================
+ Scenario 4 : idle gap = 8 cycle(s), 1000 write transactions x 4 bytes
+============================================================================
+  Metric                             |          APB |    AXI4-Lite
+  -----------------------------------+--------------+-------------
+  Transactions completed             |         1000 |         1000
+  Elapsed time (cycles)              |        10992 |        11992
+  Transaction latency - min (cycles) |            2 |            3
+  Average latency (cycles)           |         2.00 |         3.00
+  Average latency (ns)               |        20.00 |        30.00
+  Transaction latency - max (cycles) |            2 |            3
+  Throughput (MB/s)                  |        36.39 |        33.36
+  Transaction rate (Mtxn/s)          |         9.10 |         8.34
+  Bus utilisation (%)                |        18.20 |        25.02
+  Data-phase efficiency (%)          |         9.10 |         8.34
+  Master stall cycles (total)        |            0 |         2000
+  Master stall cycles per txn        |         0.00 |         2.00
+  Inter-txn gap - min (cycles)       |            8 |            8
+  Inter-txn gap - avg (cycles)       |         8.00 |         8.00
+  Inter-txn gap - max (cycles)       |            8 |            8
+
+============================================================================
+ Scenario 5 : idle gap = 16 cycle(s), 1000 write transactions x 4 bytes
+============================================================================
+  Metric                             |          APB |    AXI4-Lite
+  -----------------------------------+--------------+-------------
+  Transactions completed             |         1000 |         1000
+  Elapsed time (cycles)              |        18984 |        19984
+  Transaction latency - min (cycles) |            2 |            3
+  Average latency (cycles)           |         2.00 |         3.00
+  Average latency (ns)               |        20.00 |        30.00
+  Transaction latency - max (cycles) |            2 |            3
+  Throughput (MB/s)                  |        21.07 |        20.02
+  Transaction rate (Mtxn/s)          |         5.27 |         5.00
+  Bus utilisation (%)                |        10.54 |        15.01
+  Data-phase efficiency (%)          |         5.27 |         5.00
+  Master stall cycles (total)        |            0 |         2000
+  Master stall cycles per txn        |         0.00 |         2.00
+  Inter-txn gap - min (cycles)       |           16 |           16
+  Inter-txn gap - avg (cycles)       |        16.00 |        16.00
+  Inter-txn gap - max (cycles)       |           16 |           16
+
+============================================================================
+ Scenario 6 : idle gap = random 0-7 cycle(s), 1000 write transactions x 4 bytes
+============================================================================
+  Metric                             |          APB |    AXI4-Lite
+  -----------------------------------+--------------+-------------
+  Transactions completed             |         1000 |         1000
+  Elapsed time (cycles)              |         6529 |         7529
+  Transaction latency - min (cycles) |            2 |            3
+  Average latency (cycles)           |         2.00 |         3.00
+  Average latency (ns)               |        20.00 |        30.00
+  Transaction latency - max (cycles) |            2 |            3
+  Throughput (MB/s)                  |        61.27 |        53.13
+  Transaction rate (Mtxn/s)          |        15.32 |        13.28
+  Bus utilisation (%)                |        30.63 |        39.85
+  Data-phase efficiency (%)          |        15.32 |        13.28
+  Master stall cycles (total)        |            0 |         2000
+  Master stall cycles per txn        |         0.00 |         2.00
+  Inter-txn gap - min (cycles)       |            0 |            0
+  Inter-txn gap - avg (cycles)       |         3.53 |         3.53
+  Inter-txn gap - max (cycles)       |            7 |            7
+
+############################################################################
+#                 SUMMARY  (APB vs AXI4-Lite, same conditions)             #
+############################################################################
+ Clock = 100 MHz, data width = 32 bit, 1000 txns/scenario, APB wait states = 0
+
+ Table A : throughput, transaction rate, bus utilisation
+  gap(cyc)    |  APB MB/s  AXI MB/s | APB Mtx/s AXI Mtx/s | APB util% AXI util%
+  ------------+---------------------+---------------------+------------------
+  0           |    133.33    100.00 |     33.33     25.00 |    66.67    75.00
+  1           |    100.03     80.02 |     25.01     20.00 |    50.01    60.01
+  2           |     80.03     66.69 |     20.01     16.67 |    40.02    50.02
+  4           |     57.18     50.03 |     14.29     12.51 |    28.59    37.52
+  8           |     36.39     33.36 |      9.10      8.34 |    18.20    25.02
+  16          |     21.07     20.02 |      5.27      5.00 |    10.54    15.01
+  random 0-7  |     61.27     53.13 |     15.32     13.28 |    30.63    39.85
+
+ Table B : latency, master stalls, measured inter-transaction gap
+  gap(cyc)    |  APB lat  AXI lat |  APB max  AXI max | APB stl/t AXI stl/t |  APB gap  AXI gap
+  ------------+-------------------+-------------------+-------------------+------------------
+  0           |     2.00     3.00 |        2        3 |     0.00     2.00 |     0.00     0.00
+  1           |     2.00     3.00 |        2        3 |     0.00     2.00 |     1.00     1.00
+  2           |     2.00     3.00 |        2        3 |     0.00     2.00 |     2.00     2.00
+  4           |     2.00     3.00 |        2        3 |     0.00     2.00 |     4.00     4.00
+  8           |     2.00     3.00 |        2        3 |     0.00     2.00 |     8.00     8.00
+  16          |     2.00     3.00 |        2        3 |     0.00     2.00 |    16.00    16.00
+  random 0-7  |     2.00     3.00 |        2        3 |     0.00     2.00 |     3.53     3.53
+  (lat = average latency in cycles, stl/t = stall cycles per txn,
+   gap = measured average idle cycles between transactions)
+
+ Maximum throughput (best scenario)
+  APB       :   133.33 MB/s  (gap = 0)  =  33.3 % of the 400 MB/s one-beat-per-cycle limit
+  AXI4-Lite :   100.00 MB/s  (gap = 0)  =  25.0 % of the 400 MB/s one-beat-per-cycle limit
+
+ DATA INTEGRITY: PASS  (both slaves hold the expected data)
+############################################################################
+
+Simulation complete via $finish(1) at time 625935 NS + 0
+./testbench.sv:531     $finish;
+xcelium> exit
+TOOL:	xrun	25.03-s001: Exiting on Oct 14, 2026 at 16:40:50 EDT  (total: 00:00:10)
+Done
